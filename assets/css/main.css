@@ -1,0 +1,134 @@
+/* Custom props */
+:root {
+	--white-color: #fff;
+	--header-color: #f6f4f0;
+	--yellow-color: #fdcf24;
+	--black-hhf-color: #1e1e1e;
+	--title-color: #12141d;
+	--subtitle-color: rgba(18, 20, 29, 0.7);
+	--black-color: #000000;
+	--text-color: #454242;
+	--green-color: #055f5b;
+	--card-border-color: #e2dad6;
+	--card-bg-color: #faf8f6;
+	--pricing-bg-color: linear-gradient(
+		to bottom,
+		rgba(245, 241, 238, 0.2),
+		#f5f1ee
+	);
+	--email-bg-color: #649969;
+	--font-inter: 'Inter';
+	--font-kanit: 'Kanit';
+}
+
+/* Font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global */
+html {
+	height: 100%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Arial', sans-serif;
+	background-color: #fff;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+#preloader {
+	position: fixed;
+	inset: 0;
+	z-index: 999999;
+	overflow: hidden;
+	background: #fff;
+	transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+	content: '';
+	position: fixed;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	border: 6px solid yellow;
+	border-color: #34caa5 black;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Scroll top */
+.scroll-top {
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+	right: 15px;
+	bottom: -15px;
+	z-index: 99999;
+	background-color: #ffff00;
+	width: 44px;
+	height: 44px;
+	border-radius: 50px;
+	transition: all 0.4s;
+}
+
+.scroll-top i {
+	font-size: 24px;
+	color: #000;
+	line-height: 0;
+}
+
+.scroll-top:hover {
+	background-color: rgba(255, 255, 0, 0.8);
+}
+
+.scroll-top.active {
+	visibility: visible;
+	opacity: 1;
+	bottom: 15px;
+}
+
+/* Container */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Main content */
+.main-content {
+	flex-grow: 1;
+}
