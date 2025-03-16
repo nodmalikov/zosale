@@ -559,3 +559,39 @@ img {
 		margin-bottom: 30px;
 	}
 }
+
+/* Customers section */
+.customers {
+	padding-top: 88px;
+	padding-bottom: 88px;
+	background-color: var(--black-hhf-color);
+}
+
+.customers-title {
+	font-family: var(--font-inter);
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: var(--white-color);
+	margin-top: 0;
+	margin-bottom: 24px;
+}
+
+.customers-title span {
+	color: var(--yellow-color);
+}
+
+.customers-item img {
+	transition: transform 0.3s linear;
+}
+
+.customers-item img:hover {
+	transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+	.customers {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+}
