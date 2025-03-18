@@ -1023,8 +1023,8 @@ img {
 	color: var(--white-color);
 }
 
-.pricing-card:hover {
-	box-shadow: 5px 5px 50px 0px var(--yellow-color);
+.pricing-card:hover button {
+	background-color: var(--card-border-color);
 }
 
 .pricing-card button {
@@ -1040,10 +1040,6 @@ img {
 	line-height: 24px;
 	color: var(--title-color);
 	transition: background-color 0.3s ease;
-}
-
-.pricing-card button:hover {
-	background-color: var(--card-border-color);
 }
 
 @media only screen and (max-width: 991px) {
