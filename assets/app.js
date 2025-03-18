@@ -41,4 +41,36 @@ window.addEventListener('DOMContentLoaded', () => {
 	const glightbox = GLightbox({
 		selector: '.glightbox',
 	})
+
+	// Pricing button
+	const monthlyBtn = document.querySelector('.monthly-btn')
+	const yearlyBtn = document.querySelector('.yearly-btn')
+
+	const onePricing = document.querySelector('.one-pricing')
+	const twoPricing = document.querySelector('.two-pricing')
+	const threePricing = document.querySelector('.three-pricing')
+
+	const pricingCards = document.querySelector('.pricing-card')
+
+	monthlyBtn.addEventListener('click', function () {
+		if (!monthlyBtn.classList.contains('pricing-btn-active')) {
+			onePricing.textContent = '29'
+			twoPricing.textContent = '99'
+			threePricing.textContent = '79'
+			yearlyBtn.classList.remove('pricing-btn-active')
+			monthlyBtn.classList.add('pricing-btn-active')
+		}
+	})
+
+	yearlyBtn.addEventListener('click', function () {
+		if (!yearlyBtn.classList.contains('pricing-btn-active')) {
+			onePricing.textContent = '218'
+			twoPricing.textContent = '874'
+			threePricing.textContent = '726'
+			monthlyBtn.classList.remove('pricing-btn-active')
+			yearlyBtn.classList.add('pricing-btn-active')
+		}
+	})
+
+	pricingCards.forEach(pricingCard => (pricingCard.style.boxShadow = 'none'))
 })
