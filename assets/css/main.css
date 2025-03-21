@@ -180,6 +180,28 @@ img {
 	background-color: var(--header-color);
 }
 
+@media only screen and (max-width: 991px) {
+	.site-header {
+		position: fixed;
+		width: 100%;
+		z-index: 666;
+	}
+}
+
+.sitenav-bg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 20px;
+	width: 100%;
+	justify-content: center;
+	z-index: 200;
+	border-bottom: 1px solid #191a23;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+}
+
 .navbar .container-fluid {
 	background-color: var(--header-color);
 }

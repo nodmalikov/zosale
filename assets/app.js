@@ -72,5 +72,51 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	pricingCards.forEach(pricingCard => (pricingCard.style.boxShadow = 'none'))
+	// Header fixed
+	window.onscroll = function () {
+		if (window.innerWidth > 1001) {
+			const navbarNav = document.querySelector('.navbar-nav')
+			const offset = navbarNav.offsetHeight
+			if (window.scrollY > offset - 20) {
+				navbarNav.classList.add('sitenav-bg')
+			} else if (window.scrollY < offset - 20) {
+				navbarNav.classList.remove('sitenav-bg')
+			}
+		}
+	}
+
+	// FUNCTION TO UPDATE MAIN CONTENT'S MARGIN-TOP BASED ON HEADER'S HEIGHT
+	function updateMainContentMargin() {
+		const header = document.querySelector('.site-header')
+		const mainContent = document.querySelector('.main-content')
+		const headerHeight = header.offsetHeight
+
+		if (window.innerWidth < 991) {
+			mainContent.style.marginTop = `${headerHeight}px`
+		} else {
+			mainContent.style.marginTop = '0'
+		}
+	}
+
+	// UPDATE MAIN CONTENT'S MARGIN INITIALLY
+	updateMainContentMargin()
+
+	// WINDOW RESIZE EVENT LISTENER
+	window.addEventListener('resize', updateMainContentMargin)
+
+	// OPTIONAL: UPDATE MAIN CONTENT'S MARGIN IF THE HEADER'S HEIGHT CHANGES DYNAMICALLY
+	const header = document.querySelector('.site-header')
+	new ResizeObserver(updateMainContentMargin).observe(header)
+
+	// DOM elementlarini tanlab olamiz
+	const navLinks = document.querySelectorAll('.nav-link') // Barcha nav-link elementlari
+	const navbarCollapse = document.querySelector('.navbar-collapse') // navbar-collapse elementi
+
+	navLinks.forEach(navLink => {
+		navLink.addEventListener('click', () => {
+			if (window.innerWidth < 991) {
+				navbarCollapse.classList.remove('show')
+			}
+		})
+	})
 })
