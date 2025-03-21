@@ -795,17 +795,6 @@ img {
 	}
 }
 
-@media only screen and (max-width: 600px) {
-	.build-check {
-		gap: 20px;
-	}
-
-	.build-check div {
-		flex-direction: column-reverse;
-		align-items: center;
-	}
-}
-
 .build-links {
 	display: flex;
 	flex-direction: column;
@@ -822,6 +811,33 @@ img {
 	text-decoration: none;
 	display: flex;
 	justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+	.build-check {
+		gap: 20px;
+	}
+
+	.build-check div {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.build-links a {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.build-links a {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 365px) {
+	.build-links a {
+		font-size: 15px;
+	}
 }
 
 .build-links a > img {
